@@ -28,7 +28,6 @@ public class ServiceService {
         serviceRepository.save(services);
     }
     public void updateService(Integer auth,ServiceDTO serviceDTO){
-//        FoodTruck foodTruck=foodTruckRepository.findFoodTruckById(auth);
         Services service=serviceRepository.findServiceById(auth);
         if (service == null) {
             throw new ApiException("the food truck not found");

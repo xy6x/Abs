@@ -20,12 +20,12 @@ public class UserController {
     }
     @PostMapping("/add")
     public ResponseEntity AddUser(@RequestBody @Valid UserDTO user){
-        userService.addClient(user);
+        userService.addUser(user);
         return ResponseEntity.status(HttpStatus.OK).body("added Client");
     }
     @PutMapping("/put/{id}")
     public ResponseEntity UpdateUser(@PathVariable Integer id,@RequestBody @Valid User user){
-        userService.updateClint(id, user);
+        userService.updateUser(id, user);
         return ResponseEntity.status(HttpStatus.OK).body("update Client");
     }
     @DeleteMapping("/delete/{id}")

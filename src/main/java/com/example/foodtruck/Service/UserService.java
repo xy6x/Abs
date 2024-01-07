@@ -19,15 +19,12 @@ public class UserService {
     public List<User> getAll(){
         return userRepository.findAll();
     }
-    public void addClient(UserDTO user){
-//        User add= userRepository.findUserById(user.getId());
-//        if (add == null) {
-//            throw new ApiException("the id nt found");
-//        }
+    public void addUser(UserDTO user){
+
         User u=new User(null, user.getUserName(), user.getPassword(), user.getEmail(),user.getPhone() ,null,null,null,null);
         userRepository.save(u);
     }
-    public void updateClint(Integer auth , User user) {
+    public void updateUser(Integer auth , User user) {
         User oldadd = userRepository.findUserById(auth);
         if (oldadd == null) {
             throw new ApiException("the id nt found");
